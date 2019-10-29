@@ -46,6 +46,9 @@ int main() {
 	while (getline(in_file, line)) {
 		out_file << line << '\n';
 	}
+	
+	in_file.close();
+	out_file.close();
 
 	return 0;
 }
