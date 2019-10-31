@@ -14,7 +14,7 @@ This guide assumes that you have AVROSP added to your PATH.
 
 5) In the terminal, enter the command "mode comx baud=57600 parity=n data=8".
     Replace the "x" in "comx" with the COM port that your board is plugged into.
-    (This can be found in the "Device Manager" on windows)
+    This can be found in the "Device Manager" on windows (AVR only supports COM ports 1-8)
 
 6) In the folder where your .hex file is, run the following command:
     "AVROSP -dATmega1284P -cCOMx -pf -vf -if"filename.hex" -e".
