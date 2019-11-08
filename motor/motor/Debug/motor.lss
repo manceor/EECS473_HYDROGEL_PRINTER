@@ -435,9 +435,9 @@ int main (void)
 	//PCICR |= (1<<PCIE0); //enable PCINT0
 	
 	sei(); //enable interrupts
- 278:	82 e0       	ldi	r24, 0x02	; 2
+ 278:	81 e0       	ldi	r24, 0x01	; 1
 	int dir = 0;
-	setStepDiv(2);
+	setStepDiv(1);
  27a:	90 e0       	ldi	r25, 0x00	; 0
  27c:	d0 df       	rcall	.-96     	; 0x21e <setStepDiv>
 	setEnable(true);
@@ -471,7 +471,7 @@ int main (void)
 	int dir = 0;
  290:	c0 e2       	ldi	r28, 0x20	; 32
  292:	de e4       	ldi	r29, 0x4E	; 78
-	setStepDiv(2);
+	setStepDiv(1);
 	setEnable(true);
 	motorSleep(true); //active low, so this keeps it awake
 	while(1){
@@ -483,7 +483,7 @@ int main (void)
  29a:	21 97       	sbiw	r28, 0x01	; 1
  29c:	d9 f7       	brne	.-10     	; 0x294 <main+0x22>
 	int dir = 0;
-	setStepDiv(2);
+	setStepDiv(1);
 	setEnable(true);
 	motorSleep(true); //active low, so this keeps it awake
 	while(1){

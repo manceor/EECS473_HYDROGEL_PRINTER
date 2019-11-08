@@ -57,7 +57,7 @@ int main (void)
 	
 	sei(); //enable interrupts
 	int dir = 0;
-	setStepDiv(2);
+	setStepDiv(1);
 	setEnable(true);
 	motorSleep(true); //active low, so this keeps it awake
 	while(1){
