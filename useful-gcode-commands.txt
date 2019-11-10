@@ -1,0 +1,32 @@
+G12 - clean nozzle
+G28 - auto home
+G29 - bed leveling
+G92 - set position (set extruder position)
+G425 - auto-calibration
+
+M20 to M30 - SD card stuff
+
+M42 - set pin state (of external hardware)
+M43 T - toggle pins
+M43 - debug pins
+
+M104 - set hotend temperature
+M109 - wait for hotend temperature
+M140/190 - set/wait for bed temperature
+
+M117 - set LCD message
+
+/* debugging information we can send to a log file */
+M118 - serial print
+M575 - serial baud rate
+M260 - i2c send
+M261 - i2c request
+
+M27 - report SD print status
+M31 - print time
+M78 - print job stats
+M105 - report temperatures
+M114 - get current position
+M115 - firmware info
+M407 - filament width
+M909 - dac print values
