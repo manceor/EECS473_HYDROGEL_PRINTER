@@ -1648,7 +1648,7 @@
 	#endif
   #endif
   
-  #define DEFAULT_MAX_FEEDRATE          { 200, 200, 15, 50 }
+  #define DEFAULT_MAX_FEEDRATE          { 200, 200, 15, 250 }
   #define DEFAULT_MAX_ACCELERATION      { 500, 800, 500, 5000 }
 
   #define DEFAULT_ACCELERATION          500   
@@ -2615,7 +2615,7 @@
   #define PREVENT_COLD_EXTRUSION
 #endif
 
-#define EXTRUDE_MINTEMP 170
+#define EXTRUDE_MINTEMP 20
 
 #define PREVENT_LENGTHY_EXTRUDE
 #define EXTRUDE_MAXLENGTH 1000

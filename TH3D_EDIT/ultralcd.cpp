@@ -3163,8 +3163,8 @@ void lcd_quick_feedback(const bool clear_buttons) {
 		   max = current_position[E_CART] + 1000;
 
 		   // Limit to software endstops, if enabled
-		   min = 0;
-		   max = 500;
+		   min = -500;
+		   max = 1000;
 
 		   // Get the new position
 		   const float diff = float((int32_t)encoderPosition) * move_menu_scale;

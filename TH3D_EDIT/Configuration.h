@@ -809,8 +809,8 @@
 
 // If you want to change the Esteps for your printer you can uncomment the below line and set CUSTOM_ESTEPS_VALUE to what you want - USE WHOLE NUMBERS ONLY
 // This option sets the esteps from the CUSTOM_ESTEPS_VALUE line below and does NOT reverse the E motor direction.
-//#define CUSTOM_ESTEPS
-#define CUSTOM_ESTEPS_VALUE 999
+#define CUSTOM_ESTEPS
+#define CUSTOM_ESTEPS_VALUE 95
 
 // If you are using an TH3D Tough Extruder or E3D Titan Extruder uncomment the below line to setup the firmware to the correct steps and direction. Also applicable to Tough Direct or Titan Aero setups.
 // This option sets the esteps from the TITAN_EXTRUDER_STEPS line below and reverses the E motor direction.

@@ -5,7 +5,10 @@ using namespace std;
 
 int main() {
 	ifstream in_file("CE3_rectangular_prism_10mm_10mm_2mm.gcode");
-	ofstream out_file("parsed_gcode.txt");
+	cout << "insert file name (include .gcode): ";
+	string name_file;
+	cin >> name_file;
+	ofstream out_file(name_file);
 
 	string line;
 	int num_layers = 0;
@@ -37,7 +40,7 @@ int main() {
 		if (find != string::npos) {
 			string line_value = line.substr(find + 2);
 			float tmp = stof(line_value);
-			tmp *= 10.0;
+			tmp *= 100.0;
 			line_value = to_string(tmp);
 			line.replace(find + 2, line_value.length(), line_value);
 		}
