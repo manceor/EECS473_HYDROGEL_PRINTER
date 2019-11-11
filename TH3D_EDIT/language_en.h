@@ -113,7 +113,7 @@
   #define MSG_SET_ORIGIN                      _UxGT("Set origin")
 #endif
 #ifndef MSG_PREHEAT_1
-  #define MSG_PREHEAT_1                       _UxGT("Preheat PLA")
+  #define MSG_PREHEAT_1                       _UxGT("Preheat Hydrogel")
 #endif
 #ifndef MSG_PREHEAT_1_N
   #define MSG_PREHEAT_1_N                     MSG_PREHEAT_1 _UxGT(" ")
@@ -131,7 +131,7 @@
   #define MSG_PREHEAT_1_SETTINGS              MSG_PREHEAT_1 _UxGT(" conf")
 #endif
 #ifndef MSG_PREHEAT_2
-  #define MSG_PREHEAT_2                       _UxGT("Preheat ABS")
+  #define MSG_PREHEAT_2                       _UxGT("Preheat Chocolate")
 #endif
 #ifndef MSG_PREHEAT_2_N
   #define MSG_PREHEAT_2_N                     MSG_PREHEAT_2 _UxGT(" ")
