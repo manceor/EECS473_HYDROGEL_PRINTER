@@ -12640,6 +12640,7 @@ by R. Vogg  15.March.2002</description>
 <part name="GND12" library="supply1" library_urn="urn:adsk.eagle:library:371" deviceset="GND" device=""/>
 <part name="P+7" library="supply1" library_urn="urn:adsk.eagle:library:371" deviceset="+12V" device=""/>
 <part name="U1" library="op-amp-library" deviceset="OPA564AIDWD" device=""/>
+<part name="GND13" library="supply1" library_urn="urn:adsk.eagle:library:371" deviceset="GND" device=""/>
 </parts>
 <sheets>
 <sheet>
@@ -12735,6 +12736,9 @@ by R. Vogg  15.March.2002</description>
 <attribute name="NAME" x="66.3956" y="37.0586" size="2.0828" layer="95" ratio="6" rot="SR0"/>
 <attribute name="VALUE" x="65.7606" y="34.5186" size="2.0828" layer="96" ratio="6" rot="SR0"/>
 </instance>
+<instance part="GND13" gate="1" x="25.4" y="5.08" smashed="yes">
+<attribute name="VALUE" x="22.86" y="2.54" size="1.778" layer="96"/>
+</instance>
 </instances>
 <busses>
 </busses>
@@ -12819,6 +12823,12 @@ by R. Vogg  15.March.2002</description>
 <wire x1="40.64" y1="5.08" x2="35.56" y2="5.08" width="0.1524" layer="91"/>
 <label x="35.56" y="5.08" size="1.778" layer="95"/>
 <pinref part="U1" gate="A" pin="V-_3"/>
+</segment>
+<segment>
+<wire x1="40.64" y1="7.62" x2="25.4" y2="7.62" width="0.1524" layer="91"/>
+<label x="25.4" y="7.62" size="1.778" layer="95"/>
+<pinref part="U1" gate="A" pin="TSENSE"/>
+<pinref part="GND13" gate="1" pin="GND"/>
 </segment>
 </net>
 <net name="+5V" class="0">
@@ -12916,13 +12926,6 @@ by R. Vogg  15.March.2002</description>
 <pinref part="U1" gate="A" pin="V+PWR_2"/>
 <pinref part="U1" gate="A" pin="V+PWR_3"/>
 <pinref part="U1" gate="A" pin="V+PWR"/>
-</segment>
-</net>
-<net name="TSENSE" class="0">
-<segment>
-<wire x1="40.64" y1="7.62" x2="25.4" y2="7.62" width="0.1524" layer="91"/>
-<label x="25.4" y="7.62" size="1.778" layer="95"/>
-<pinref part="U1" gate="A" pin="TSENSE"/>
 </segment>
 </net>
 <net name="N$7" class="0">

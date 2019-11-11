@@ -12615,10 +12615,14 @@ by R. Vogg  15.March.2002</description>
 <part name="U1" library="myLibrary" deviceset="OPA564AIDWD" device=""/>
 <part name="Q2" library="transistor-fet" library_urn="urn:adsk.eagle:library:396" deviceset="BUZ10" device="" package3d_urn="urn:adsk.eagle:package:28520/1"/>
 <part name="GND11" library="supply1" library_urn="urn:adsk.eagle:library:371" deviceset="GND" device=""/>
+<part name="R4" library="rcl" library_urn="urn:adsk.eagle:library:334" deviceset="R-US_" device="R0603" package3d_urn="urn:adsk.eagle:package:23555/3" value="10k"/>
+<part name="R5" library="rcl" library_urn="urn:adsk.eagle:library:334" deviceset="R-US_" device="R0603" package3d_urn="urn:adsk.eagle:package:23555/3" value="1k"/>
+<part name="GND12" library="supply1" library_urn="urn:adsk.eagle:library:371" deviceset="GND" device=""/>
 </parts>
 <sheets>
 <sheet>
 <plain>
+<text x="127" y="-12.7" size="1.778" layer="91">LIMIT CURRENT TO 1.5A</text>
 </plain>
 <instances>
 <instance part="LDO1" gate="G$1" x="83.82" y="78.74" smashed="yes">
@@ -12694,6 +12698,17 @@ by R. Vogg  15.March.2002</description>
 <instance part="U1" gate="A" x="38.1" y="27.94" smashed="yes">
 <attribute name="NAME" x="66.3956" y="37.0586" size="2.0828" layer="95" ratio="6" rot="SR0"/>
 <attribute name="VALUE" x="65.7606" y="34.5186" size="2.0828" layer="96" ratio="6" rot="SR0"/>
+</instance>
+<instance part="R4" gate="G$1" x="114.3" y="-2.54" smashed="yes" rot="R90">
+<attribute name="NAME" x="112.8014" y="-6.35" size="1.778" layer="95" rot="R90"/>
+<attribute name="VALUE" x="117.602" y="-6.35" size="1.778" layer="96" rot="R90"/>
+</instance>
+<instance part="R5" gate="G$1" x="114.3" y="-15.24" smashed="yes" rot="R90">
+<attribute name="NAME" x="112.8014" y="-19.05" size="1.778" layer="95" rot="R90"/>
+<attribute name="VALUE" x="117.602" y="-19.05" size="1.778" layer="96" rot="R90"/>
+</instance>
+<instance part="GND12" gate="1" x="129.54" y="20.32" smashed="yes">
+<attribute name="VALUE" x="127" y="17.78" size="1.778" layer="96"/>
 </instance>
 </instances>
 <busses>
@@ -12781,9 +12796,16 @@ by R. Vogg  15.March.2002</description>
 <label x="101.6" y="2.54" size="1.778" layer="95"/>
 </segment>
 <segment>
+<pinref part="R5" gate="G$1" pin="1"/>
+<wire x1="114.3" y1="-20.32" x2="114.3" y2="-22.86" width="0.1524" layer="91"/>
+<wire x1="114.3" y1="-22.86" x2="124.46" y2="-22.86" width="0.1524" layer="91"/>
 <pinref part="U1" gate="A" pin="V-"/>
-<wire x1="101.6" y1="25.4" x2="106.68" y2="25.4" width="0.1524" layer="91"/>
-<label x="101.6" y="25.4" size="1.778" layer="95"/>
+<wire x1="124.46" y1="-22.86" x2="124.46" y2="25.4" width="0.1524" layer="91"/>
+<wire x1="124.46" y1="25.4" x2="101.6" y2="25.4" width="0.1524" layer="91"/>
+<wire x1="124.46" y1="25.4" x2="129.54" y2="25.4" width="0.1524" layer="91"/>
+<junction x="124.46" y="25.4"/>
+<wire x1="129.54" y1="25.4" x2="129.54" y2="22.86" width="0.1524" layer="91"/>
+<pinref part="GND12" gate="1" pin="GND"/>
 </segment>
 </net>
 <net name="+5V" class="0">
@@ -12851,7 +12873,7 @@ by R. Vogg  15.March.2002</description>
 <wire x1="137.16" y1="22.86" x2="137.16" y2="17.78" width="0.1524" layer="91"/>
 </segment>
 </net>
-<net name="PELTIER_12V" class="0">
+<net name="PELTIER_5V" class="0">
 <segment>
 <pinref part="U1" gate="A" pin="VOUT"/>
 <wire x1="40.64" y1="15.24" x2="35.56" y2="15.24" width="0.1524" layer="91"/>
@@ -12861,6 +12883,11 @@ by R. Vogg  15.March.2002</description>
 <wire x1="35.56" y1="15.24" x2="25.4" y2="15.24" width="0.1524" layer="91"/>
 <junction x="35.56" y="15.24"/>
 <label x="25.4" y="15.24" size="1.778" layer="95"/>
+</segment>
+<segment>
+<pinref part="U1" gate="A" pin="IN-"/>
+<wire x1="101.6" y1="12.7" x2="111.76" y2="12.7" width="0.1524" layer="91"/>
+<label x="104.14" y="12.7" size="1.778" layer="95"/>
 </segment>
 </net>
 <net name="+12V" class="0">
@@ -12881,6 +12908,35 @@ by R. Vogg  15.March.2002</description>
 <wire x1="35.56" y1="20.32" x2="40.64" y2="20.32" width="0.1524" layer="91"/>
 <wire x1="35.56" y1="22.86" x2="25.4" y2="22.86" width="0.1524" layer="91"/>
 <label x="25.4" y="22.86" size="1.778" layer="95"/>
+</segment>
+</net>
+<net name="TSENSE" class="0">
+<segment>
+<pinref part="U1" gate="A" pin="TSENSE"/>
+<wire x1="40.64" y1="7.62" x2="25.4" y2="7.62" width="0.1524" layer="91"/>
+<label x="25.4" y="7.62" size="1.778" layer="95"/>
+</segment>
+</net>
+<net name="N$7" class="0">
+<segment>
+<pinref part="U1" gate="A" pin="ISET"/>
+<wire x1="101.6" y1="5.08" x2="114.3" y2="5.08" width="0.1524" layer="91"/>
+<wire x1="114.3" y1="5.08" x2="114.3" y2="2.54" width="0.1524" layer="91"/>
+<pinref part="R4" gate="G$1" pin="2"/>
+</segment>
+</net>
+<net name="N$21" class="0">
+<segment>
+<pinref part="R4" gate="G$1" pin="1"/>
+<pinref part="R5" gate="G$1" pin="2"/>
+<wire x1="114.3" y1="-7.62" x2="114.3" y2="-10.16" width="0.1524" layer="91"/>
+</segment>
+</net>
+<net name="PELTIER_PWM" class="0">
+<segment>
+<pinref part="U1" gate="A" pin="IN+"/>
+<wire x1="101.6" y1="15.24" x2="111.76" y2="15.24" width="0.1524" layer="91"/>
+<label x="104.14" y="15.24" size="1.778" layer="95"/>
 </segment>
 </net>
 </nets>

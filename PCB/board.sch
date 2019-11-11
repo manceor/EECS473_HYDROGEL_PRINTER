@@ -12641,6 +12641,7 @@ by R. Vogg  15.March.2002</description>
 <part name="P+7" library="supply1" library_urn="urn:adsk.eagle:library:371" deviceset="+12V" device=""/>
 <part name="U1" library="op-amp-library" deviceset="OPA564AIDWD" device=""/>
 <part name="GND13" library="supply1" library_urn="urn:adsk.eagle:library:371" deviceset="GND" device=""/>
+<part name="P+8" library="supply1" library_urn="urn:adsk.eagle:library:371" deviceset="+12V" device=""/>
 </parts>
 <sheets>
 <sheet>
@@ -12992,7 +12993,7 @@ by R. Vogg  15.March.2002</description>
 </sheet>
 <sheet>
 <plain>
-<text x="210.82" y="114.3" size="1.778" layer="91">TODO: Add connector for heater</text>
+<text x="203.2" y="142.24" size="1.778" layer="91">TODO: Add connector for heater</text>
 </plain>
 <instances>
 <instance part="IC1" gate="G$1" x="124.46" y="63.5" smashed="yes">
@@ -13075,8 +13076,11 @@ by R. Vogg  15.March.2002</description>
 <attribute name="VALUE" x="189.23" y="127" size="1.778" layer="96"/>
 <attribute name="NAME" x="189.23" y="129.54" size="1.778" layer="95"/>
 </instance>
-<instance part="GND11" gate="1" x="205.74" y="104.14" smashed="yes">
-<attribute name="VALUE" x="203.2" y="101.6" size="1.778" layer="96"/>
+<instance part="GND11" gate="1" x="205.74" y="119.38" smashed="yes">
+<attribute name="VALUE" x="203.2" y="116.84" size="1.778" layer="96"/>
+</instance>
+<instance part="P+8" gate="1" x="205.74" y="154.94" smashed="yes">
+<attribute name="VALUE" x="203.2" y="149.86" size="1.778" layer="96" rot="R90"/>
 </instance>
 </instances>
 <busses>
@@ -13160,6 +13164,11 @@ by R. Vogg  15.March.2002</description>
 <pinref part="LED2" gate="G$1" pin="C"/>
 <pinref part="GND10" gate="1" pin="GND"/>
 <wire x1="195.58" y1="25.4" x2="195.58" y2="20.32" width="0.1524" layer="91"/>
+</segment>
+<segment>
+<pinref part="GND11" gate="1" pin="GND"/>
+<pinref part="Q2" gate="G$1" pin="S"/>
+<wire x1="205.74" y1="121.92" x2="205.74" y2="124.46" width="0.1524" layer="91"/>
 </segment>
 </net>
 <net name="N$2" class="0">
@@ -13450,27 +13459,20 @@ by R. Vogg  15.March.2002</description>
 <wire x1="147.32" y1="73.66" x2="157.48" y2="73.66" width="0.1524" layer="91"/>
 </segment>
 </net>
-<net name="+12V" class="0">
+<net name="-HEATER" class="0">
 <segment>
 <pinref part="Q2" gate="G$1" pin="D"/>
-<wire x1="205.74" y1="129.54" x2="215.9" y2="129.54" width="0.1524" layer="91"/>
-<label x="208.28" y="129.54" size="1.778" layer="95"/>
+<wire x1="205.74" y1="129.54" x2="205.74" y2="139.7" width="0.1524" layer="91"/>
+<wire x1="205.74" y1="139.7" x2="213.36" y2="139.7" width="0.1524" layer="91"/>
+<label x="210.82" y="139.7" size="1.778" layer="95"/>
 </segment>
 </net>
 <net name="+HEATER" class="0">
 <segment>
-<pinref part="Q2" gate="G$1" pin="S"/>
-<wire x1="205.74" y1="124.46" x2="205.74" y2="119.38" width="0.1524" layer="91"/>
-<wire x1="205.74" y1="119.38" x2="213.36" y2="119.38" width="0.1524" layer="91"/>
-<label x="208.28" y="119.38" size="1.778" layer="95"/>
-</segment>
-</net>
-<net name="-HEATER" class="0">
-<segment>
-<pinref part="GND11" gate="1" pin="GND"/>
-<wire x1="205.74" y1="106.68" x2="205.74" y2="111.76" width="0.1524" layer="91"/>
-<wire x1="205.74" y1="111.76" x2="213.36" y2="111.76" width="0.1524" layer="91"/>
-<label x="208.28" y="111.76" size="1.778" layer="95"/>
+<wire x1="213.36" y1="147.32" x2="205.74" y2="147.32" width="0.1524" layer="91"/>
+<wire x1="205.74" y1="147.32" x2="205.74" y2="152.4" width="0.1524" layer="91"/>
+<pinref part="P+8" gate="1" pin="+12V"/>
+<label x="210.82" y="147.32" size="1.778" layer="95"/>
 </segment>
 </net>
 </nets>

@@ -12939,6 +12939,20 @@ by R. Vogg  15.March.2002</description>
 <label x="104.14" y="15.24" size="1.778" layer="95"/>
 </segment>
 </net>
+<net name="IFLAG" class="0">
+<segment>
+<pinref part="U1" gate="A" pin="IFLAG"/>
+<wire x1="101.6" y1="7.62" x2="111.76" y2="7.62" width="0.1524" layer="91"/>
+<label x="104.14" y="7.62" size="1.778" layer="95"/>
+</segment>
+</net>
+<net name="TFLAG" class="0">
+<segment>
+<pinref part="U1" gate="A" pin="TFLAG"/>
+<wire x1="101.6" y1="20.32" x2="111.76" y2="20.32" width="0.1524" layer="91"/>
+<label x="104.14" y="20.32" size="1.778" layer="95"/>
+</segment>
+</net>
 </nets>
 </sheet>
 <sheet>
