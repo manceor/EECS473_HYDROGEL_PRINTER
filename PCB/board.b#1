@@ -2902,6 +2902,8 @@ design rules under a new name.</description>
 <via x="17.78" y="57.785" extent="1-16" drill="0.35"/>
 <wire x1="17.78" y1="57.785" x2="15.06" y2="57.785" width="0.2" layer="1"/>
 <wire x1="15.06" y1="57.785" x2="14.83" y2="58.015" width="0.2" layer="1"/>
+<contactref element="IC1" pad="18"/>
+<contactref element="IC1" pad="39"/>
 </signal>
 <signal name="+5V">
 <contactref element="R2" pad="2"/>
@@ -3354,7 +3356,13 @@ design rules under a new name.</description>
 <wire x1="8.705" y1="14.42" x2="5.865" y2="14.42" width="0.2" layer="1"/>
 <wire x1="4.475" y1="33.385" x2="7.189" y2="33.385" width="0.1524" layer="1"/>
 <wire x1="7.189" y1="33.385" x2="7.249" y2="33.325" width="0.1524" layer="1"/>
-<wire x1="14.7287" y1="31.745" x2="24.1013" y2="31.745" width="0" layer="19" extent="1-1"/>
+<wire x1="21.97365" y1="33.6268" x2="22.47635" y2="33.6268" width="0.1524" layer="1"/>
+<wire x1="22.47635" y1="33.6268" x2="22.8318" y2="33.27135" width="0.1524" layer="1"/>
+<wire x1="14.7287" y1="31.745" x2="20.09185" y2="31.745" width="0.1524" layer="1"/>
+<wire x1="22.8318" y1="33.27135" x2="22.8318" y2="32.6912125" width="0.1524" layer="1"/>
+<wire x1="22.8318" y1="32.6912125" x2="23.7780125" y2="31.745" width="0.1524" layer="1"/>
+<wire x1="23.7780125" y1="31.745" x2="24.1013" y2="31.745" width="0.1524" layer="1"/>
+<wire x1="20.09185" y1="31.745" x2="21.97365" y2="33.6268" width="0.1524" layer="1"/>
 </signal>
 <signal name="ISET">
 <contactref element="R4" pad="2"/>
@@ -3458,6 +3466,12 @@ design rules under a new name.</description>
 </signal>
 <signal name="+HEATER">
 <contactref element="HEATER_CONNECTOR" pad="1"/>
+</signal>
+<signal name="N$1">
+<contactref element="IC1" pad="17"/>
+</signal>
+<signal name="N$22">
+<contactref element="IC1" pad="38"/>
 </signal>
 </signals>
 <mfgpreviewcolors>

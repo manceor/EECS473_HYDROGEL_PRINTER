@@ -13547,7 +13547,9 @@ part number 2062-2P from STA</description>
 <part name="GND13" library="supply1" library_urn="urn:adsk.eagle:library:371" deviceset="GND" device=""/>
 <part name="P+8" library="supply1" library_urn="urn:adsk.eagle:library:371" deviceset="+12V" device=""/>
 <part name="P+9" library="supply1" library_urn="urn:adsk.eagle:library:371" deviceset="+12V" device=""/>
-<part name="J2" library="SparkFun-Connectors" deviceset="CONN_02" device="5MM"/>
+<part name="HEATER_CONNECTOR" library="SparkFun-Connectors" deviceset="CONN_02" device="5MM"/>
+<part name="PELTIER_CONNECTOR" library="SparkFun-Connectors" deviceset="CONN_02" device="5MM"/>
+<part name="GND14" library="supply1" library_urn="urn:adsk.eagle:library:371" deviceset="GND" device=""/>
 </parts>
 <sheets>
 <sheet>
@@ -13649,6 +13651,13 @@ part number 2062-2P from STA</description>
 <instance part="P+9" gate="1" x="50.8" y="86.36" smashed="yes">
 <attribute name="VALUE" x="48.26" y="81.28" size="1.778" layer="96" rot="R90"/>
 </instance>
+<instance part="PELTIER_CONNECTOR" gate="G$1" x="2.54" y="15.24" smashed="yes">
+<attribute name="VALUE" x="0" y="10.414" size="1.778" layer="96" font="vector"/>
+<attribute name="NAME" x="0" y="20.828" size="1.778" layer="95" font="vector"/>
+</instance>
+<instance part="GND14" gate="1" x="17.78" y="10.16" smashed="yes">
+<attribute name="VALUE" x="15.24" y="7.62" size="1.778" layer="96"/>
+</instance>
 </instances>
 <busses>
 </busses>
@@ -13742,6 +13751,12 @@ part number 2062-2P from STA</description>
 <label x="101.6" y="25.4" size="1.778" layer="95"/>
 <pinref part="U1" gate="A" pin="V-"/>
 </segment>
+<segment>
+<pinref part="PELTIER_CONNECTOR" gate="G$1" pin="2"/>
+<wire x1="10.16" y1="17.78" x2="17.78" y2="17.78" width="0.1524" layer="91"/>
+<pinref part="GND14" gate="1" pin="GND"/>
+<wire x1="17.78" y1="17.78" x2="17.78" y2="12.7" width="0.1524" layer="91"/>
+</segment>
 </net>
 <net name="+5V" class="0">
 <segment>
@@ -13813,11 +13828,12 @@ part number 2062-2P from STA</description>
 <wire x1="40.64" y1="15.24" x2="35.56" y2="15.24" width="0.1524" layer="91"/>
 <wire x1="35.56" y1="15.24" x2="35.56" y2="17.78" width="0.1524" layer="91"/>
 <wire x1="35.56" y1="17.78" x2="40.64" y2="17.78" width="0.1524" layer="91"/>
-<wire x1="35.56" y1="15.24" x2="25.4" y2="15.24" width="0.1524" layer="91"/>
 <junction x="35.56" y="15.24"/>
 <label x="25.4" y="15.24" size="1.778" layer="95"/>
 <pinref part="U1" gate="A" pin="VOUT_2"/>
 <pinref part="U1" gate="A" pin="VOUT"/>
+<pinref part="PELTIER_CONNECTOR" gate="G$1" pin="1"/>
+<wire x1="35.56" y1="15.24" x2="10.16" y2="15.24" width="0.1524" layer="91"/>
 </segment>
 <segment>
 <wire x1="101.6" y1="12.7" x2="111.76" y2="12.7" width="0.1524" layer="91"/>
@@ -13860,12 +13876,13 @@ part number 2062-2P from STA</description>
 <pinref part="U1" gate="A" pin="V+"/>
 </segment>
 </net>
-<net name="N$7" class="0">
+<net name="ISET" class="0">
 <segment>
 <wire x1="101.6" y1="5.08" x2="114.3" y2="5.08" width="0.1524" layer="91"/>
 <wire x1="114.3" y1="5.08" x2="114.3" y2="2.54" width="0.1524" layer="91"/>
 <pinref part="R4" gate="G$1" pin="2"/>
 <pinref part="U1" gate="A" pin="ISET"/>
+<label x="104.14" y="5.08" size="1.778" layer="95"/>
 </segment>
 </net>
 <net name="N$21" class="0">
@@ -13988,7 +14005,7 @@ part number 2062-2P from STA</description>
 <instance part="P+8" gate="1" x="205.74" y="154.94" smashed="yes">
 <attribute name="VALUE" x="203.2" y="149.86" size="1.778" layer="96" rot="R90"/>
 </instance>
-<instance part="J2" gate="G$1" x="228.6" y="147.32" smashed="yes" rot="R180">
+<instance part="HEATER_CONNECTOR" gate="G$1" x="228.6" y="147.32" smashed="yes" rot="R180">
 <attribute name="VALUE" x="231.14" y="152.146" size="1.778" layer="96" font="vector" rot="R180"/>
 <attribute name="NAME" x="231.14" y="141.732" size="1.778" layer="95" font="vector" rot="R180"/>
 </instance>
@@ -14375,7 +14392,7 @@ part number 2062-2P from STA</description>
 <wire x1="205.74" y1="129.54" x2="205.74" y2="144.78" width="0.1524" layer="91"/>
 <wire x1="205.74" y1="144.78" x2="220.98" y2="144.78" width="0.1524" layer="91"/>
 <label x="210.82" y="142.24" size="1.778" layer="95"/>
-<pinref part="J2" gate="G$1" pin="2"/>
+<pinref part="HEATER_CONNECTOR" gate="G$1" pin="2"/>
 </segment>
 </net>
 <net name="+HEATER" class="0">
@@ -14384,7 +14401,7 @@ part number 2062-2P from STA</description>
 <pinref part="P+8" gate="1" pin="+12V"/>
 <label x="210.82" y="147.32" size="1.778" layer="95"/>
 <wire x1="205.74" y1="147.32" x2="220.98" y2="147.32" width="0.1524" layer="91"/>
-<pinref part="J2" gate="G$1" pin="1"/>
+<pinref part="HEATER_CONNECTOR" gate="G$1" pin="1"/>
 </segment>
 </net>
 </nets>
