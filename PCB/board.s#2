@@ -14422,6 +14422,16 @@ part number 2062-2P from STA</description>
 <pinref part="P+5" gate="1" pin="+5V"/>
 <wire x1="231.14" y1="78.74" x2="231.14" y2="86.36" width="0.1524" layer="91"/>
 </segment>
+<segment>
+<pinref part="IC1" gate="G$1" pin="VCC@1"/>
+<wire x1="109.22" y1="81.28" x2="106.68" y2="81.28" width="0.1524" layer="91"/>
+<label x="106.68" y="81.28" size="1.778" layer="95"/>
+</segment>
+<segment>
+<pinref part="IC1" gate="G$1" pin="VCC@2"/>
+<wire x1="109.22" y1="76.2" x2="106.68" y2="76.2" width="0.1524" layer="91"/>
+<label x="106.68" y="76.2" size="1.778" layer="95"/>
+</segment>
 </net>
 <net name="GND" class="0">
 <segment>
@@ -14822,18 +14832,6 @@ part number 2062-2P from STA</description>
 <label x="210.82" y="147.32" size="1.778" layer="95"/>
 <wire x1="205.74" y1="147.32" x2="220.98" y2="147.32" width="0.1524" layer="91"/>
 <pinref part="HEATER_CONNECTOR" gate="G$1" pin="1"/>
-</segment>
-</net>
-<net name="N$1" class="0">
-<segment>
-<pinref part="IC1" gate="G$1" pin="VCC@1"/>
-<wire x1="109.22" y1="81.28" x2="106.68" y2="81.28" width="0.1524" layer="91"/>
-</segment>
-</net>
-<net name="N$22" class="0">
-<segment>
-<pinref part="IC1" gate="G$1" pin="VCC@2"/>
-<wire x1="109.22" y1="76.2" x2="106.68" y2="76.2" width="0.1524" layer="91"/>
 </segment>
 </net>
 </nets>

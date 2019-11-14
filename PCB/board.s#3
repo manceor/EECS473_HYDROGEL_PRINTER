@@ -8405,6 +8405,10 @@ Source: DCJ0202.pdf</description>
 <pin name="AVCC" x="-22.86" y="38.1" length="middle"/>
 <pin name="AREF" x="-22.86" y="33.02" length="middle"/>
 <pin name="TXD0/PCINT25" x="22.86" y="-27.94" length="middle" rot="R180"/>
+<pin name="VCC@1" x="-22.86" y="17.78" length="middle"/>
+<pin name="GND@2" x="-22.86" y="15.24" length="middle"/>
+<pin name="VCC@2" x="-22.86" y="12.7" length="middle"/>
+<pin name="GND@3" x="-22.86" y="10.16" length="middle"/>
 </symbol>
 </symbols>
 <devicesets>
@@ -8429,6 +8433,8 @@ Source: DCJ0202.pdf</description>
 <connect gate="G$1" pin="AVCC" pad="27"/>
 <connect gate="G$1" pin="GND@0" pad="6"/>
 <connect gate="G$1" pin="GND@1" pad="28"/>
+<connect gate="G$1" pin="GND@2" pad="18"/>
+<connect gate="G$1" pin="GND@3" pad="39"/>
 <connect gate="G$1" pin="MISO/OC3A/PCINT14" pad="2"/>
 <connect gate="G$1" pin="MOSI/ICP3/PCINT13" pad="1"/>
 <connect gate="G$1" pin="OC1A/PCINT29" pad="14"/>
@@ -8452,6 +8458,8 @@ Source: DCJ0202.pdf</description>
 <connect gate="G$1" pin="TXD0/PCINT25" pad="10"/>
 <connect gate="G$1" pin="TXD1/INT1/PCINT27" pad="12"/>
 <connect gate="G$1" pin="VCC" pad="5"/>
+<connect gate="G$1" pin="VCC@1" pad="17"/>
+<connect gate="G$1" pin="VCC@2" pad="38"/>
 <connect gate="G$1" pin="XCK1/OC1B/PCINT28" pad="13"/>
 <connect gate="G$1" pin="XTAL1" pad="8"/>
 <connect gate="G$1" pin="XTAL2" pad="7"/>
@@ -14414,6 +14422,15 @@ part number 2062-2P from STA</description>
 <pinref part="P+5" gate="1" pin="+5V"/>
 <wire x1="231.14" y1="78.74" x2="231.14" y2="86.36" width="0.1524" layer="91"/>
 </segment>
+<segment>
+<pinref part="IC1" gate="G$1" pin="VCC@1"/>
+<wire x1="109.22" y1="81.28" x2="106.68" y2="81.28" width="0.1524" layer="91"/>
+<label x="106.68" y="81.28" size="1.778" layer="95"/>
+</segment>
+<segment>
+<pinref part="IC1" gate="G$1" pin="VCC@2"/>
+<wire x1="109.22" y1="76.2" x2="106.68" y2="76.2" width="0.1524" layer="91"/>
+</segment>
 </net>
 <net name="GND" class="0">
 <segment>
@@ -14470,6 +14487,16 @@ part number 2062-2P from STA</description>
 <pinref part="GND11" gate="1" pin="GND"/>
 <pinref part="Q2" gate="G$1" pin="S"/>
 <wire x1="205.74" y1="121.92" x2="205.74" y2="124.46" width="0.1524" layer="91"/>
+</segment>
+<segment>
+<pinref part="IC1" gate="G$1" pin="GND@2"/>
+<wire x1="109.22" y1="78.74" x2="106.68" y2="78.74" width="0.1524" layer="91"/>
+<label x="106.68" y="78.74" size="1.778" layer="95"/>
+</segment>
+<segment>
+<pinref part="IC1" gate="G$1" pin="GND@3"/>
+<wire x1="109.22" y1="73.66" x2="106.68" y2="73.66" width="0.1524" layer="91"/>
+<label x="106.68" y="73.66" size="1.778" layer="95"/>
 </segment>
 </net>
 <net name="N$2" class="0">
