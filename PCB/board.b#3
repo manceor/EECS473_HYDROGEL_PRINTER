@@ -91,6 +91,7 @@
 <layer number="109" name="fp9" color="7" fill="1" visible="no" active="yes"/>
 <layer number="110" name="fp0" color="7" fill="1" visible="no" active="yes"/>
 <layer number="111" name="LPC17xx" color="7" fill="1" visible="no" active="yes"/>
+<layer number="112" name="tSilk" color="7" fill="1" visible="yes" active="yes"/>
 <layer number="113" name="IDFDebug" color="4" fill="1" visible="no" active="no"/>
 <layer number="114" name="Badge_Outline" color="7" fill="1" visible="no" active="no"/>
 <layer number="115" name="ReferenceISLANDS" color="7" fill="1" visible="no" active="no"/>
@@ -2846,6 +2847,17 @@ design rules under a new name.</description>
 <element name="JP1" library="pinhead" library_urn="urn:adsk.eagle:library:325" package="1X02" package3d_urn="urn:adsk.eagle:package:22435/2" value="" x="15.621" y="56.896" smashed="yes">
 <attribute name="VALUE" x="13.081" y="53.721" size="1.27" layer="27"/>
 </element>
+<element name="R7" library="rcl" package="R0603" value="150" x="-0.381" y="-14.351" smashed="yes">
+<attribute name="NAME" x="-1.016" y="-13.716" size="1.27" layer="25"/>
+<attribute name="POPULARITY" value="77" x="-0.381" y="-3.937" size="0.6096" layer="27" display="off"/>
+<attribute name="SPICEPREFIX" value="R" x="-0.381" y="-3.937" size="0.6096" layer="27" display="off"/>
+<attribute name="VALUE" x="-1.016" y="-16.256" size="1.27" layer="27"/>
+</element>
+<element name="SCK_LED1" library="led" package="CHIP-LED0603" value="BLUE" x="0.508" y="-10.541" smashed="yes">
+<attribute name="NAME" x="-0.127" y="-11.176" size="1.27" layer="25" rot="R90"/>
+<attribute name="POPULARITY" value="26" x="-4.572" y="-5.08" size="0.6096" layer="27" display="off"/>
+<attribute name="VALUE" x="2.413" y="-11.176" size="1.27" layer="27" rot="R90"/>
+</element>
 </elements>
 <signals>
 <signal name="GND">
@@ -2914,6 +2926,7 @@ design rules under a new name.</description>
 <via x="13.589" y="54.229" extent="1-16" drill="0.35"/>
 <wire x1="13.589" y1="54.229" x2="14.224" y2="54.229" width="0.1524" layer="1"/>
 <wire x1="14.224" y1="54.229" x2="16.891" y2="56.896" width="0.1524" layer="1"/>
+<contactref element="SCK_LED1" pad="C"/>
 <wire x1="62.58" y1="32.4" x2="66.803" y2="33.131" width="0" layer="19" extent="1-1"/>
 <wire x1="57.58" y1="26.6" x2="62.58" y2="32.4" width="0" layer="19" extent="1-1"/>
 <wire x1="56.78" y1="38.2" x2="62.58" y2="32.4" width="0" layer="19" extent="1-1"/>
@@ -2943,6 +2956,7 @@ design rules under a new name.</description>
 <wire x1="10.665" y1="11.32" x2="8.5506" y2="20.4988" width="0" layer="19" extent="1-1"/>
 <wire x1="5.865" y1="8.32" x2="10.665" y2="11.32" width="0" layer="19" extent="1-1"/>
 <wire x1="20.64" y1="4.735" x2="10.665" y2="11.32" width="0" layer="19" extent="1-1"/>
+<wire x1="0.508" y1="-9.791" x2="5.865" y2="8.32" width="0" layer="19" extent="1-1"/>
 <wire x1="44.175" y1="3.075" x2="44.46" y2="22.21" width="0" layer="19" extent="1-1"/>
 </signal>
 <signal name="+5V">
@@ -3192,6 +3206,8 @@ design rules under a new name.</description>
 <wire x1="54.8586" y1="26.2786" x2="55.18" y2="26.6" width="0.1524" layer="1"/>
 <wire x1="35.95" y1="18.3" x2="47.4032875" y2="18.3" width="0.1524" layer="1"/>
 <wire x1="47.4032875" y1="18.3" x2="54.8586" y2="25.7553125" width="0.1524" layer="1"/>
+<contactref element="R7" pad="2"/>
+<wire x1="0.469" y1="-14.351" x2="35.95" y2="18.3" width="0" layer="19" extent="1-1"/>
 </signal>
 <signal name="14">
 <contactref element="IC1" pad="14"/>
@@ -3510,6 +3526,11 @@ design rules under a new name.</description>
 <contactref element="HEATER_CONNECTOR" pad="2"/>
 <wire x1="33.355" y1="4.695" x2="34.275" y2="5.615" width="0.7874" layer="1"/>
 <wire x1="34.275" y1="5.615" x2="44.175" y2="5.615" width="0.7874" layer="1"/>
+</signal>
+<signal name="N$1">
+<contactref element="R7" pad="1"/>
+<contactref element="SCK_LED1" pad="A"/>
+<wire x1="0.508" y1="-11.291" x2="-1.231" y2="-14.351" width="0" layer="19" extent="1-1"/>
 </signal>
 </signals>
 <mfgpreviewcolors>
